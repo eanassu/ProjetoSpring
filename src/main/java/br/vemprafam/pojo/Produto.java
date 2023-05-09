@@ -2,11 +2,14 @@ package br.vemprafam.pojo;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Produto {
 	private int codigo;
 	private String descricao;
 	private int quantidade;
 	private double preco;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dataCompra;
 	public int getCodigo() {
 		return codigo;

@@ -7,11 +7,9 @@
 <body>
 Página inicial do Projeto<br/>
 
-<a href="cadastro.jsp">Cadastro</a><br/>
-<a href="lista">Lista (Servlet)</a><br/>
-<a href="lista.jsp">lista (JSP)</a><br/>
-<a href="Controller?op=Lista">lista (taglib)</a><br/>
-<a href="exclusao.html">exclusão</a><br/>
-<a href="busca.html">busca/alteração</a><br/>
+<a href="cadastro">Cadastro</a><br/>
+<a href="lista">lista</a><br/>
+<a href="exclusao">exclusão</a><br/>
+<a href="busca">busca/alteração</a><br/>
 </body>
 </html>
