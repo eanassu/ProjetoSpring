@@ -27,7 +27,7 @@ public class DaoProduto {
 	}
 	
 	public void insert(Produto produto) {
-		String sql = "INSERT INTO PRODUTOS VALUES(?,?,?,?,?)";
+		String sql = "INSERT INTO PRODUTOS(codigo,descricao,quantidade,preco,dataCompra) VALUES(?,?,?,?,?)";
 		try {
 			PreparedStatement pstmt = connection.prepareStatement(sql);
 			pstmt.setInt(1, produto.getCodigo());
@@ -47,7 +47,7 @@ public class DaoProduto {
 		List<Produto> lista = new ArrayList<>();
 		try {
 			Statement stmt = connection.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM PRODUTOS");
+			ResultSet rs = stmt.executeQuery("SELECT codigo,descricao,quantidade,preco,dataCompra FROM PRODUTOS");
 			while ( rs.next() ) {
 				lista.add(new Produto(rs.getInt(1),
 									  rs.getString(2),
@@ -93,7 +93,7 @@ public class DaoProduto {
 	}
 	
 	public Produto buscarPeloCodigo(int codigo) {
-		String sql = "SELECT * FROM PRODUTOS WHERE CODIGO=?";
+		String sql = "SELECT codigo,descricao,quantidade,preco,dataCompra FROM PRODUTOS WHERE CODIGO=?";
 		try {
 			PreparedStatement pstmt = connection.prepareStatement(sql);
 			pstmt.setInt(1, codigo);
